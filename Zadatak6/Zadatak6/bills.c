@@ -64,13 +64,14 @@ int ispis(Position q) {
 	q = q->next;
 	while (q != NULL) {
 		articlePosition temp = q->articleNext;
-		printf("%s \nDatum: %d %d %d\n", q->bill, q->year, q->month, q->day);
+		printf("\t%s\t \nDatum:\t %d\t %d\t %d\t\n", q->bill, q->year, q->month, q->day);
+		printf("Proizvod:\tKolicina\tCijena\t\n");
 		if (temp == NULL) {
 			printf("temp je null za %s\n", q->bill);
 		}
 		else {
 			while (temp != NULL) {
-				printf("%s %d %.2lf\n", temp->item, temp->quantity, temp->price);
+				printf("\t%s\t %d\t %.2lf\t\n", temp->item, temp->quantity, temp->price);
 				temp = temp->next;
 			}
 		}

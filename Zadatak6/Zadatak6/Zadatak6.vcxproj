@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="article.c" />
     <ClCompile Include="bills.c" />
+    <ClCompile Include="freeingMemory.c" />
     <ClCompile Include="options.c" />
     <ClCompile Include="sortingByDate.c" />
     <ClCompile Include="sortingByItem.c" />
@@ -134,6 +135,7 @@
     <ClInclude Include="allHeaders.h" />
     <ClInclude Include="article.h" />
     <ClInclude Include="bills.h" />
+    <ClInclude Include="freeingMemory.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="sortingByDate.h" />
     <ClInclude Include="sortingByItem.h" />

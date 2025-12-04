@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\options.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\Zadatak6.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\Zadatak6.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\sortingByItem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\freeingMemory.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\sortingByItem.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\sortingByDate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\sortingByDate.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\options.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\options.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|solutionrelative:Zadatak6\\freeingMemory.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43E4B221-6700-4740-AF02-784BEED7B657}|Zadatak6\\Zadatak6.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\allHeaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,101 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sortingByItem.h",
-              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.h",
-              "RelativeDocumentMoniker": "Zadatak6\\sortingByItem.h",
-              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.h",
-              "RelativeToolTip": "Zadatak6\\sortingByItem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-04T00:32:56.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "sortingByItem.c",
-              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.c",
-              "RelativeDocumentMoniker": "Zadatak6\\sortingByItem.c",
-              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByItem.c",
-              "RelativeToolTip": "Zadatak6\\sortingByItem.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-04T00:32:49.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "sortingByDate.h",
-              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.h",
-              "RelativeDocumentMoniker": "Zadatak6\\sortingByDate.h",
-              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.h",
-              "RelativeToolTip": "Zadatak6\\sortingByDate.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-04T00:32:44.833Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "sortingByDate.c",
-              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.c",
-              "RelativeDocumentMoniker": "Zadatak6\\sortingByDate.c",
-              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\sortingByDate.c",
-              "RelativeToolTip": "Zadatak6\\sortingByDate.c",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-04T00:32:37.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "options.h",
-              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.h",
-              "RelativeDocumentMoniker": "Zadatak6\\options.h",
-              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.h",
-              "RelativeToolTip": "Zadatak6\\options.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-03T19:56:10.754Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "options.c",
               "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.c",
               "RelativeDocumentMoniker": "Zadatak6\\options.c",
               "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\options.c",
               "RelativeToolTip": "Zadatak6\\options.c",
-              "ViewState": "AgIAADQBAAAAAAAAAAAAADMBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-12-03T19:56:03.693Z"
+              "WhenOpened": "2025-12-04T01:08:46.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "freeingMemory.h",
+              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.h",
+              "RelativeDocumentMoniker": "Zadatak6\\freeingMemory.h",
+              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.h",
+              "RelativeToolTip": "Zadatak6\\freeingMemory.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-04T00:54:36.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "freeingMemory.c",
+              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.c",
+              "RelativeDocumentMoniker": "Zadatak6\\freeingMemory.c",
+              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\freeingMemory.c",
+              "RelativeToolTip": "Zadatak6\\freeingMemory.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-12-04T00:54:24.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "allHeaders.h",
               "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\allHeaders.h",
               "RelativeDocumentMoniker": "Zadatak6\\allHeaders.h",
               "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\allHeaders.h",
               "RelativeToolTip": "Zadatak6\\allHeaders.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-02T22:35:42.987Z"
+              "WhenOpened": "2025-12-02T22:35:42.987Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Zadatak6.c",
               "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\Zadatak6.c",
               "RelativeDocumentMoniker": "Zadatak6\\Zadatak6.c",
               "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak6\\Zadatak6\\Zadatak6.c",
               "RelativeToolTip": "Zadatak6\\Zadatak6.c",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-11-13T18:18:49.98Z",
               "EditorCaption": ""

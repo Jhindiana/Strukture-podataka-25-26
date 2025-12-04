@@ -33,6 +33,9 @@
     <ClCompile Include="options.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="freeingMemory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bills.h">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="options.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="freeingMemory.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

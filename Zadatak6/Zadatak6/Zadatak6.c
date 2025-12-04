@@ -18,5 +18,14 @@ int main() {
 	stats statHeadPrice = { .nextStat = NULL };
 	addingBills(&headBill);
 	options(&headBill, &statHead, &statHeadPrice);
+	while (headBill.next != NULL) {
+		freeingPosition(&headBill);
+	}
+	while (headBill.next != NULL) {
+		freeingStatPosition(&statHead);
+	}
+	while (headBill.next != NULL) {
+		freeingStatPosition(&statHeadPrice);
+	}
 	return 0;
 }

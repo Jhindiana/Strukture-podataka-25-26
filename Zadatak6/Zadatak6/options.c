@@ -48,10 +48,20 @@ int caseFunction(Position q, int x, statPosition stat) {
 		mostBought(q, stat);
 		break;
 	case 7:
-		printf("Funkcija je trenutno pod konstrukcijom\n");
+		printf("Unesi datume1: godina misec dan\n");
+		scanf("%d %d %d", &y1, &m1, &d1);
+		printf("Unesi datume2: godina misec dan\n");
+		scanf("%d %d %d", &y2, &m2, &d2);
+		printf("Najmanje kupljen proizvod u trazenom vremenu je\n");
+		leastBoughtInTime(q, stat, y1, y2, m1, m2, d1, d2);
 		break;
 	case 8:
-		printf("Funkcija je trenutno pod konstrukcijom\n");
+		printf("Unesi datume1: godina misec dan\n");
+		scanf("%d %d %d", &y1, &m1, &d1);
+		printf("Unesi datume2: godina misec dan\n");
+		scanf("%d %d %d", &y2, &m2, &d2);
+		printf("Najvise kupljen proizvod u trazenom vremenu je\n");
+		mostBoughtInTime(q, stat, y1, y2, m1, m2, d1, d2);
 		break;
 	case 9:
 		printf("Funkcija je trenutno pod konstrukcijom\n");
@@ -67,7 +77,7 @@ int caseFunction(Position q, int x, statPosition stat) {
 		printf("Postrosnja u trazenom vremenu je %.2lf\n", overallSpendingOverTime(q, y1, y2, m1, m2, d1, d2));
 		break;
 	default:
-		printf("Greska u caseFunction\n");
+		printf("Prekid programa\n");
 		break;
 	}
 	return 0;
@@ -325,4 +335,68 @@ double overallSpendingOverTime(Position q, int y1, int y2, int m1, int m2, int d
 		temp = temp->next;
 	}
 	return spending;
+}
+int leastBoughtInTime(Position q, statPosition stat, int y1, int y2, int m1, int m2, int d1, int d2) {
+	Position temp = q->next;
+	articlePosition	help;
+	while (!(y1 <= temp->year) && !(m1 <= temp->year) && !(d1 <= temp->year)) {
+		temp = temp->next;
+	}
+	while (temp != NULL) {
+		help = temp->articleNext;
+		if (temp->year <= y2 && temp->month <= m2 && temp->day <= d2) {
+			while (help != NULL) {
+				addingOrUpdatingStats(stat, help->item, help->quantity);
+				help = help->next;
+			}
+		}
+		while (help != NULL) {
+			addingOrUpdatingStats(stat, help->item, help->quantity);
+			help = help->next;
+		}
+		temp = temp->next;
+	}
+	statPosition stats = stat->nextStat;
+	statPosition min = stats;
+	stats = stats->nextStat;
+	while (stats != NULL) {
+		if (stats->overallQuantity < min->overallQuantity) {
+			min = stats;
+		}
+		stats = stats->nextStat;
+	}
+	printf("%s\n", min->name);
+	return 0;
+}
+int mostBoughtInTime(Position q, statPosition stat, int y1, int y2, int m1, int m2, int d1, int d2) {
+	Position temp = q->next;
+	articlePosition	help;
+	while (!(y1 <= temp->year) && !(m1 <= temp->year) && !(d1 <= temp->year)) {
+		temp = temp->next;
+	}
+	while (temp != NULL) {
+		help = temp->articleNext;
+		if (temp->year <= y2 && temp->month <= m2 && temp->day <= d2) {
+			while (help != NULL) {
+				addingOrUpdatingStats(stat, help->item, help->quantity);
+				help = help->next;
+			}
+		}
+		while (help != NULL) {
+			addingOrUpdatingStats(stat, help->item, help->quantity);
+			help = help->next;
+		}
+		temp = temp->next;
+	}
+	statPosition stats = stat->nextStat;
+	statPosition max = stats;
+	stats = stats->nextStat;
+	while (stats != NULL) {
+		if (stats->overallQuantity > max->overallQuantity) {
+			max = stats;
+		}
+		stats = stats->nextStat;
+	}
+	printf("%s\n", max->name);
+	return 0;
 }

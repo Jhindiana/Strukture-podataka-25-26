@@ -8,4 +8,5 @@
 #include "sortingByDate.h"
 #include "sortingByItem.h"
 #include "options.h"
+#include "freeingMemory.h"
 #define MAX 50

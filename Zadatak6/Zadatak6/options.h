@@ -21,3 +21,5 @@ int addingOrUpdatingStats(statPosition, const char*, int);
 int addingOrUpdatingPrices(statPosition, const char*, double);
 double overallSpending(Position);
 double overallSpendingOverTime(Position, int, int, int, int, int, int);
+int leastBoughtInTime(Position, statPosition, int, int, int, int, int, int);
+int mostBoughtInTime(Position, statPosition, int, int, int, int, int, int);
