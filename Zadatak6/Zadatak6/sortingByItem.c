@@ -1,16 +1,28 @@
 #include "allHeaders.h"
-//int sortingItems(Position q) {
-//	articlePosition start = q->articleNext, help;
-//
-//	while (start != NULL) {
-//		printf("Test:%s\n", start->item);
-//		help = start->next;
-//		if (strcmp(start->item, help->item) < 0) {
-//			start->next = help->next;
-//			help->next = start;
-//		}
-//		start = start->next;
-//	}
-//	
-//	return 0;
-//}
+int addToArticle(articlePosition q, const char* x, int y, double z) {
+	articlePosition toAdd = newArticle(x, y, z);
+	if (toAdd == NULL) {
+		printf("Greska u alokaciji toAdd\n");
+		return -1;
+	}
+	articlePosition temp = q;
+	while (temp->next != NULL && (strcmp(temp->next->item, toAdd->item) < 0)) {
+		temp = temp->next;
+	}
+	toAdd->next = temp->next;
+	temp->next = toAdd;
+	return 0;
+}
+
+articlePosition newArticle(const char* a, int b, double c) {
+	articlePosition nA = (articlePosition)malloc(sizeof(article));
+	if (nA == NULL) {
+		printf("Greska pri alokaciji u addToArticle\n");
+		return NULL;
+	}
+	strcpy(nA->item, a);
+	nA->quantity = b;
+	nA->price = c;
+	nA->next = NULL;
+	return nA;
+}

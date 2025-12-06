@@ -6,7 +6,12 @@ Position newBill() {
 		printf("Greska u alokaciji u newBill\n");
 		return NULL;
 	}
-	nB->articleNext = NULL;
+	nB->articleNext = malloc(sizeof(article));
+	if (nB->articleNext == NULL) {
+		printf("Greska u alokaciji articleNext u nB\n");
+		return NULL;
+	}
+	nB->articleNext->next = NULL;
 	nB->next = NULL;
 	return nB;
 }
@@ -37,18 +42,9 @@ int addingBills(Position q) {
 		}
 		articlePosition last = NULL;
 		while (fscanf(fr, "%s %d %lf", c, &m, &n) == 3) {
-			articlePosition articleHelp = addToArticle(c, m, n);
-			if (last == NULL) {
-				help->articleNext = articleHelp;
-			}
-			else {
-				last->next = articleHelp;
-			}
-			last = articleHelp;
+			addToArticle(help->articleNext, c, m, n);
 		}
-		
 		fclose(fr);
-		
 		while (temp->next != NULL) {
 			temp = temp->next;
 		}
@@ -56,16 +52,15 @@ int addingBills(Position q) {
 	}
 	fclose(fp);
 	sortingByDate(q);
-
 	return 0;
 }
 
 int ispis(Position q) {
 	q = q->next;
 	while (q != NULL) {
-		articlePosition temp = q->articleNext;
+		articlePosition temp = q->articleNext->next;
 		printf("\t%s\t \nDatum:\t %d\t %d\t %d\t\n", q->bill, q->year, q->month, q->day);
-		printf("Proizvod:\tKolicina\tCijena\t\n");
+		printf("\nProizvod:\tKolicina\tCijena\t\n");
 		if (temp == NULL) {
 			printf("temp je null za %s\n", q->bill);
 		}

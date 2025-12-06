@@ -12,5 +12,3 @@ typedef struct article {
 	double price;
 	articlePosition next;
 }article;
-
-articlePosition addToArticle(const char*, int, double);

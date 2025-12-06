@@ -1,3 +1,4 @@
 #pragma once
 #include "allHeaders.h"
-//int sortingItems(Position);
+int addToArticle(articlePosition, const char*, int, double);
+articlePosition newArticle(const char*, int, double);

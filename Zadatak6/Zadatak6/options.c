@@ -1,7 +1,7 @@
 #include "allHeaders.h"
 int options(Position q, statPosition stat, statPosition average) {
 	int option;
-	printf("----Racuni----\n");
+	printf("\t----Racuni----\n");
 	ispis(q);
 	
 	printf("Unesite:\n"); 
@@ -14,9 +14,8 @@ int options(Position q, statPosition stat, statPosition average) {
 		printf("(6) za ispisati najvise kupljen proizvod\n");
 		printf("(7) za ispisati najmanje kupljen proizvod u nekom razdoblju\n");
 		printf("(8) za ispisati najvise kupljen proizvod u nekom razdoblju\n");
-		printf("(9) za ispis prosjeka cijene proizvoda\n");
-		printf("(10) za ispis ukupne potrosnje\n");
-		printf("(11) za ispis postrosnje u odredenom vremenu\n");
+		printf("(9) za ispis ukupne potrosnje\n");
+		printf("(10) za ispis postrosnje u odredenom vremenu\n");
 		printf("(0) za prekid programa\n");
 		if (scanf("%d", &option) != 1) {
 			printf("Lose unesena opcija\n");
@@ -64,12 +63,9 @@ int caseFunction(Position q, int x, statPosition stat) {
 		mostBoughtInTime(q, stat, y1, y2, m1, m2, d1, d2);
 		break;
 	case 9:
-		printf("Funkcija je trenutno pod konstrukcijom\n");
-		break;
-	case 10:
 		printf("Ukupna potrosnja %.2lf\n", overallSpending(q));
 		break;
-	case 11:
+	case 10:
 		printf("Unesi datume1: godina misec dan\n");
 		scanf("%d %d %d", &y1, &m1, &d1);
 		printf("Unesi datume2: godina misec dan\n");
@@ -85,9 +81,9 @@ int caseFunction(Position q, int x, statPosition stat) {
 int cheapestArticle(Position q) {
 	Position temp = q->next;
 	articlePosition cheapest, cheapestOverAll, help;
-	cheapestOverAll = temp->articleNext;
+	cheapestOverAll = temp->articleNext->next;
 	while (temp != NULL) {
-		cheapest = temp->articleNext;
+		cheapest = temp->articleNext->next;
 		help = cheapest->next;
 		while (help != NULL) {
 			if (help->price < cheapest->price) {
@@ -111,7 +107,7 @@ int mostExpensiveArticle(Position q) {
 	char expensiveItem[MAX];
 	char finalItem[MAX];
 	while (temp != NULL) {
-		priciest = temp->articleNext;
+		priciest = temp->articleNext->next;
 		expensivePrice = priciest->price;
 		strcpy(expensiveItem, priciest->item);
 		while (priciest != NULL) {
@@ -142,7 +138,7 @@ int leastProfitable(Position q) {
 		return -1;
 	}
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		sum = 0;
 		while (help != NULL) {
 			sum += help->quantity * help->price;
@@ -177,7 +173,7 @@ int mostProfitable(Position q) {
 		return -1;
 	}
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		sum = 0;
 		while (help != NULL) {
 			sum += help->quantity * help->price;
@@ -208,7 +204,7 @@ int leastBought(Position q, statPosition stat) {
 	Position temp = q->next;
 	articlePosition	help;
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		while (help != NULL) {
 			addingOrUpdatingStats(stat, help->item, help->quantity);
 			help = help->next;
@@ -231,7 +227,7 @@ int mostBought(Position q, statPosition stat) {
 	Position temp = q->next;
 	articlePosition	help;
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		while (help != NULL) {
 			addingOrUpdatingStats(stat, help->item, help->quantity);
 			help = help->next;
@@ -254,7 +250,7 @@ int averagePrice(Position q, statPosition average) {
 	Position temp = q->next;
 	articlePosition help;
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		while (help != NULL) {
 			addingOrUpdatingPrices(average, help->item, help->price);
 			help = help->next;
@@ -307,7 +303,7 @@ double overallSpending(Position q) {
 	articlePosition help;
 	double spending = 0;
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		while (help != NULL) {
 			spending += help->quantity * help->price;
 			help = help->next;
@@ -324,7 +320,7 @@ double overallSpendingOverTime(Position q, int y1, int y2, int m1, int m2, int d
 		temp = temp->next;
 	}
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		if (temp->year <= y2 && temp->month <= m2 && temp->day <= d2) {
 			while (help != NULL) {
 				spending += help->quantity * help->price;
@@ -343,7 +339,7 @@ int leastBoughtInTime(Position q, statPosition stat, int y1, int y2, int m1, int
 		temp = temp->next;
 	}
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		if (temp->year <= y2 && temp->month <= m2 && temp->day <= d2) {
 			while (help != NULL) {
 				addingOrUpdatingStats(stat, help->item, help->quantity);
@@ -375,7 +371,7 @@ int mostBoughtInTime(Position q, statPosition stat, int y1, int y2, int m1, int 
 		temp = temp->next;
 	}
 	while (temp != NULL) {
-		help = temp->articleNext;
+		help = temp->articleNext->next;
 		if (temp->year <= y2 && temp->month <= m2 && temp->day <= d2) {
 			while (help != NULL) {
 				addingOrUpdatingStats(stat, help->item, help->quantity);
