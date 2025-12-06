@@ -7,6 +7,14 @@ int freeingPosition(Position q) {
 	free(Del);
 	return 0;
 }
+int freeingArticlePosition(articlePosition q) {
+	articlePosition del;
+	del = q->next;
+	q->next = del->next;
+	del->next = NULL;
+	free(del);
+	return 0;
+}
 int freeingStatPosition(statPosition q) {
 	statPosition Del;
 	Del = q->nextStat;

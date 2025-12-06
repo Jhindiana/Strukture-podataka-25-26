@@ -19,6 +19,9 @@ int main() {
 	addingBills(&headBill);
 	options(&headBill, &statHead, &statHeadPrice);
 	while (headBill.next != NULL) {
+		while (headBill.articleNext != NULL) {
+			freeingArticlePosition(headBill.articleNext);
+		}
 		freeingPosition(&headBill);
 	}
 	while (headBill.next != NULL) {
