@@ -10,11 +10,5 @@ int main() {
 	push(&headStog, headNode.brother);
 	options(&headNode, &headStog);
 	headNode.brother = NULL;
-	if (headNode.brother == NULL && headNode.child == NULL) {
-		printf("HeadNode dobro izbrisan\n");
-	}
-	if (headStog.stogNext == NULL) {
-		printf("HeadStog dobro izbrisan\n");
-	}
 	return 0;
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F2A0F523-7797-46AB-9B0F-E282DA549622}|Zadatak7\\Zadatak7.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\cdDirFunction.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F2A0F523-7797-46AB-9B0F-E282DA549622}|Zadatak7\\Zadatak7.vcxproj|solutionrelative:Zadatak7\\cdDirFunction.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F2A0F523-7797-46AB-9B0F-E282DA549622}|Zadatak7\\Zadatak7.vcxproj|C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\Zadatak7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F2A0F523-7797-46AB-9B0F-E282DA549622}|Zadatak7\\Zadatak7.vcxproj|solutionrelative:Zadatak7\\Zadatak7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "cdDirFunction.c",
+              "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\cdDirFunction.c",
+              "RelativeDocumentMoniker": "Zadatak7\\cdDirFunction.c",
+              "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\cdDirFunction.c",
+              "RelativeToolTip": "Zadatak7\\cdDirFunction.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-12-10T20:54:30.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Zadatak7.c",
               "DocumentMoniker": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\Zadatak7.c",
               "RelativeDocumentMoniker": "Zadatak7\\Zadatak7.c",
               "ToolTip": "C:\\Users\\Luka Radman-Livaja\\OneDrive\\Radna povr\u0161ina\\SP25\\Zadatak7\\Zadatak7\\Zadatak7.c",
               "RelativeToolTip": "Zadatak7\\Zadatak7.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-12-07T21:30:32.145Z",
               "EditorCaption": ""
