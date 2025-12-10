@@ -23,5 +23,8 @@ int cdDirFunction(stogPosition s, stogPosition level) {
 		}
 		check = check->brother;
 	}
+	if (!isEntered) {
+		printf("%s se ne nalazi u ovom direktoriju\n", folder);
+	}
 	return 0;
 }
