@@ -1,0 +1,12 @@
+#pragma once
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include "structure.h"
+#include "options.h"
+#include "caseFunctions.h"
+#include "insertingInRoot.h"
+#include "treePrinting.h"
+#include "deletingElement.h"
+#include "findingElement.h"
+#include "freeingTree.h"
