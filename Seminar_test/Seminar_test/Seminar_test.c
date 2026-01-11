@@ -30,13 +30,7 @@ int main() {
 	sudoku_stogTest = head_sudokuStog.nextStog;
 	settingValue(test, ticTacToe_stogTest, sudoku_stogTest);
 
-	//printing
-	printing(test, ticTacToe_stogTest, sudoku_stogTest);
-	movement(&headMaze);
-
-	ticTacToe(ticTacToe_stogTest);
-
-	sudoku(sudoku_stogTest);
+	movement(test, ticTacToe_stogTest, sudoku_stogTest);
 
 	return 0;
 }

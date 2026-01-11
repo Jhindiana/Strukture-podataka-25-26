@@ -28,8 +28,8 @@ int ticTacToe(sPosition ttt) {
 			continue;
 		}
 		//checking if player won before letting computer play or if its tied
-		if (scoreCalculation(ttt, availableSpots)) {
-			break;
+		if (scoreCalculation(ttt, availableSpots) == 3 || scoreCalculation(ttt, availableSpots) == 2) {
+			return 1;
 		}
 		//computer playing
 		availableSpots--;
@@ -37,12 +37,11 @@ int ticTacToe(sPosition ttt) {
 			computerMovesTTT(ttt, haveAWinner);
 		}
 		//check if computer won after his move
-		if (scoreCalculation(ttt, availableSpots)) {
-			break;
+		if (scoreCalculation(ttt, availableSpots) == 1) {
+			return 0;
 		}
 		availableSpots --;
 	}
-	return 0;
 }
 
 int applyingChoice(sPosition ttt, int pR, int pC) {
@@ -183,12 +182,12 @@ int scoreCalculation(sPosition ttt, int availableSpots) {
 		haveAWinner++;
 		printingTicTacToe(ttt);
 		printf("Player wins\n");
-		return 1;
+		return 3;
 	}
 	else if (score == 2) {
 		printingTicTacToe(ttt);
 		printf("Tie\n");
-		return 1;
+		return 2;
 	}
 	else if (score == 3) {
 		printingTicTacToe(ttt);

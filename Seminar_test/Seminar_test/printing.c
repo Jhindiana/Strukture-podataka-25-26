@@ -53,7 +53,7 @@ int printingMAzeUsingMask(Position firstTest) {
 		printf("%d\t", firstTest->depth);
 		tilePosition help = firstTest->firstTile;
 		while (help != NULL) {
-			if (help->mask) {
+			if (help->mask == 1) {
 				printf("%d ", help->test);
 			}
 			else {

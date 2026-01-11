@@ -15,6 +15,7 @@ mgtPosition newMGT();
 int makingMiniGameTiles(sPosition, int);
 
 int settingValue(Position, sPosition, sPosition);
+int resettingValue(sPosition);
 int randomNumberGenerator(int);
 
 int printing(Position, sPosition, sPosition);
@@ -48,8 +49,10 @@ int sudokuSix(sPosition);
 int sudokuSeven(sPosition);
 int sudokuEight(sPosition);
 
-int movement(Position);
+int movement(Position, sPosition, sPosition);
 tilePosition up(Position, tilePosition);
 tilePosition down(Position, tilePosition);
 tilePosition left(Position, tilePosition);
 tilePosition right(Position, tilePosition);
+tilePosition tileMover(tilePosition, tilePosition, sPosition, sPosition);
+int callingGame(sPosition, sPosition);

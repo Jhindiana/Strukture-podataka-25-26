@@ -7,7 +7,6 @@ typedef struct tile {
 	int column;
 	int mask;
 	int test;
-	int isSolved;
 	tilePosition nextTile;
 }tile;
 

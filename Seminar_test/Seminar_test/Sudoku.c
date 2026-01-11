@@ -1,11 +1,11 @@
 #include "header.h"
 int sudoku(sPosition sudokuStog) {
-	int playerChoice, playerRow, playerColumn, flag = 1, n = SUDOKU_SIZE * SUDOKU_SIZE - revealedNumbers(sudokuStog);
+	int playerChoice, playerRow, playerColumn, flag = 1, n = SUDOKU_SIZE * SUDOKU_SIZE - revealedNumbers(sudokuStog), m;
 	while (flag) {
 		if (!n) {
 			printf("Sudoku cleared\n");
 			printingSudokuUsingMask(sudokuStog);
-			break;
+			return 1;
 		}
 		printf("\n");
 		printingSudokuUsingMask(sudokuStog);
@@ -25,13 +25,17 @@ int sudoku(sPosition sudokuStog) {
 			printf("Wrong choice\n");
 			continue;
 		}
-		if (!applyingSudokuChoice(sudokuStog, playerRow, playerColumn)) {
+		m = applyingSudokuChoice(sudokuStog, playerRow, playerColumn);
+		if (m == 1) {
 			printf("Wrong number placed\n");
 			continue;
 		}
+		else if (m == 2) {
+			printf("Wrong solution\n");
+			return 0;
+		}
 		n--;
 	}
-	return 0;
 }
 
 int revealedNumbers(sPosition sudokuStog) {
@@ -60,15 +64,18 @@ int applyingSudokuChoice(sPosition sudokuStog, int pR, int pC) {
 	}
 	if (selectedTile->mask) {
 		printf("Position already solved\n");
-		return 1;
+		return 0;
 	}
 	printf("Number: ");
 	scanf("%d", &number);
+	if (number < 1 || number>4) {
+		return 1;
+	}
 	if (selectedTile->symbol != number) {
-		return 0;
+		return 2;
 	}
 	selectedTile->mask = 1;
-	return 1;
+	return 0;
 }
 
 int sudokuOne(sPosition sudokuStog) {

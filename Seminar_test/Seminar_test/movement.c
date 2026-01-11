@@ -1,8 +1,12 @@
 #include "header.h"
-int movement(Position maze) {
-	tilePosition currentTile = maze->next->firstTile;
+int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
+	tilePosition currentTile = maze->firstTile;
+	tilePosition nextTile = currentTile;
 	int choice = 1;
 	while (choice) {
+		currentTile->test = 5;
+		printingMAzeUsingMask(maze);
+		currentTile->test = 4;
 		printf("Choose direction\n");
 		printf("1 - moving up\n");
 		printf("2 - moving down\n");
@@ -12,6 +16,7 @@ int movement(Position maze) {
 		printf("Your choice: ");
 		if (!scanf("%d", &choice)) {
 			printf("Choice not registered\n");
+			continue;
 		}
 		if (choice > 4 || 0 > choice) {
 			printf("Invalid choice\n");
@@ -19,25 +24,26 @@ int movement(Position maze) {
 		}
 		switch (choice) {
 		case 1:
-			currentTile = up(maze->next, currentTile);
-			printingMaze(maze->next);
+			nextTile = up(maze, currentTile);
+			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		case 2:
-			currentTile = down(maze->next, currentTile);
-			printingMaze(maze->next);
+			nextTile = down(maze, currentTile);
+			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		case 3:
-			currentTile = left(maze->next, currentTile);
-			printingMaze(maze->next);
+			nextTile = left(maze, currentTile);
+			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		case 4:
-			currentTile = right(maze->next, currentTile);
-			printingMaze(maze->next);
+			nextTile = right(maze, currentTile);
+			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		default:
 			printf("Pozvan default u movement\n");
 			break;
 		}
+		
 	}
 	return 0;
 }
@@ -45,7 +51,6 @@ int movement(Position maze) {
 tilePosition up(Position mazeHead, tilePosition currentTile) {
 	if (currentTile->row == 0) {
 		printf("Cant go up anymore\n");
-		currentTile->test += 1;
 		return currentTile;
 	}
 	else {
@@ -58,7 +63,6 @@ tilePosition up(Position mazeHead, tilePosition currentTile) {
 		while (newPosition->column != currentTile->column) {
 			newPosition = newPosition->nextTile;
 		}
-		newPosition->test += 1;
 		return newPosition;
 	}
 }
@@ -66,7 +70,6 @@ tilePosition up(Position mazeHead, tilePosition currentTile) {
 tilePosition down(Position mazeHead, tilePosition currentTile) {
 	if (currentTile->row == TILE - 1) {
 		printf("Cant go down anymore\n");
-		currentTile->test += 1;
 		return currentTile;
 	}
 	else {
@@ -80,11 +83,6 @@ tilePosition down(Position mazeHead, tilePosition currentTile) {
 		while (newPosition->column != currentTile->column) {
 			newPosition = newPosition->nextTile;
 		}
-		if (newPosition == NULL) {
-			printf("Cant go down anymore\n");
-			return currentTile;
-		}
-		newPosition->test += 1;
 		return newPosition;
 	}
 }
@@ -92,7 +90,6 @@ tilePosition down(Position mazeHead, tilePosition currentTile) {
 tilePosition left(Position mazeHead, tilePosition currentTile) {
 	if (currentTile->column == 0) {
 		printf("Cant go left anymore\n");
-		currentTile->test += 1;
 		return currentTile;
 	}
 	else {
@@ -105,11 +102,6 @@ tilePosition left(Position mazeHead, tilePosition currentTile) {
 		while (newPosition->nextTile->column != currentTile->column) {
 			newPosition = newPosition->nextTile;
 		}
-		newPosition->test += 1;
-		if (newPosition == NULL) {
-			printf("Cant go left anymore\n");
-			return currentTile;
-		}
 		return newPosition;
 	}
 }
@@ -117,7 +109,6 @@ tilePosition left(Position mazeHead, tilePosition currentTile) {
 tilePosition right(Position mazeHead, tilePosition currentTile) {
 	if (currentTile->column == TILE - 1) {
 		printf("Cant go right anymore\n");
-		currentTile->test += 1;
 		return currentTile;
 	}
 	else {
@@ -130,11 +121,73 @@ tilePosition right(Position mazeHead, tilePosition currentTile) {
 		while (newPosition->column != currentTile->nextTile->column) {
 			newPosition = newPosition->nextTile;
 		}
-		newPosition->test += 1;
-		if (newPosition == NULL) {
-			printf("Cant go right anymore\n");
-			return currentTile;
-		}
 		return newPosition;
 	}
+}
+
+tilePosition tileMover(tilePosition nextTile, tilePosition currentTile, sPosition ticTacToeStog, sPosition sudokuStog) {
+	if (nextTile == NULL) {
+		return currentTile;
+	}
+	else {
+		int result;
+		if (nextTile->mask == 0) {
+			result = callingGame(ticTacToeStog, sudokuStog);
+			if (result == 1 || result == -1) {
+				printf("Tile unlocked\n");
+				nextTile->mask = 1;
+				return nextTile;
+			}
+			else {
+				printf("Mini game not solved: cant unlock this tile anymore\n");
+				nextTile->mask = 2;
+				return currentTile;
+			}
+		}
+		else if (nextTile->mask == 2) {
+			printf("Cant unlock this tile\n");
+			return currentTile;
+		}
+	}
+}
+
+int callingGame(sPosition tictactoeStog, sPosition sudokuStog) {
+	int random = randomNumberGenerator(2), result, sudokuRandom = randomNumberGenerator(8) + 1;
+	if (random) {
+		result = ticTacToe(tictactoeStog);
+		resettingValue(tictactoeStog);
+	}
+	else {
+		switch (sudokuRandom) {
+		case 1:
+			sudokuOne(sudokuStog);
+			break;
+		case 2:
+			sudokuTwo(sudokuStog);
+			break;
+		case 3:
+			sudokuThree(sudokuStog);
+			break;
+		case 4:
+			sudokuFour(sudokuStog);
+			break;
+		case 5:
+			sudokuFive(sudokuStog);
+			break;
+		case 6:
+			sudokuSix(sudokuStog);
+			break;
+		case 7:
+			sudokuSeven(sudokuStog);
+			break;
+		case 8:
+			sudokuEight(sudokuStog);
+			break;
+		default:
+			printf("Greska u switch funkciji u settingValue\n");
+			break;
+		}
+		result = sudoku(sudokuStog);
+	}
+	return result;
 }
