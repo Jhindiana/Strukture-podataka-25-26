@@ -5,7 +5,6 @@ int ticTacToe(sPosition ttt) {
 	int haveAWinner = 0;
 	while (availableSpots > 0) {
 		//players plays
-		printf("Broj mista %d\n", availableSpots);
 		printingTicTacToe(ttt);
 		printf("\n");
 		printingTicTacToeRowsAndColumns(ttt);

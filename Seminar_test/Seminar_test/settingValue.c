@@ -4,17 +4,26 @@ int settingValue(Position q, sPosition ticTacToeStog, sPosition sudokuStog) {
 	Position help = q;
 	sPosition sudokuHelp = sudokuStog;
 	sPosition tttHelp = ticTacToeStog;
-	int i = 0;
+	int i = 0, k = 0;
 	while (help != NULL) {
 		int j = 0;
 		tilePosition tiles = help->firstTile;
 		while (tiles != NULL) {
-			tiles->test = 4;//randomNumberGenerator(3);
+			tiles->path = 0;
 			tiles->mask = 0;
+			tiles->end = 0;
+			tiles->placement = k;
+			tiles->isImportant = 0;
 			tiles->row = i;
 			tiles->column = j;
+			if (help->next == NULL) {
+				if (tiles->nextTile == NULL) {
+					tiles->end = 1;
+				}
+			}
 			tiles = tiles->nextTile;
 			j++;
+			k++;
 		}
 		i++;
 		help = help->next;
@@ -22,47 +31,40 @@ int settingValue(Position q, sPosition ticTacToeStog, sPosition sudokuStog) {
 
 	//making sure first tile is path
 	q->firstTile->mask = 1;
-	i = 0;
 
-	//setting tic tac toe row and column
-	while (tttHelp != NULL) {
-		mgtPosition tttTiles = tttHelp->firstMGT;
-		int j = 0;
-		while (tttTiles != NULL) {
-			tttTiles->row = i;
-			tttTiles->column = j;
-			tttTiles = tttTiles->brother;
-			j++;
-		}
-		i++;
-		tttHelp = tttHelp->nextStog;
-	}
-	i = 0;
+	//setting tic tac toe rows and columns
+	settingMGTValue(ticTacToeStog);
 
 	//setting sudoku rows and columns
-	while (sudokuHelp != NULL) {
-		mgtPosition sudokuTiles = sudokuHelp->firstMGT;
-		int j = 0;
-		while (sudokuTiles != NULL) {
-			sudokuTiles->row = i;
-			sudokuTiles->column = j;
-			sudokuTiles = sudokuTiles->brother;
+	settingMGTValue(sudokuStog);
+	
+	return 0;
+}
+
+int settingMGTValue(sPosition stog) {
+	int i = 0, j = 0;
+	while (stog != NULL) {
+		mgtPosition tiles = stog->firstMGT;
+		while (tiles != NULL) {
+			tiles->row = i;
+			tiles->column = j;
+			tiles = tiles->brother;
 			j++;
 		}
+		j = 0;
 		i++;
-		sudokuHelp = sudokuHelp->nextStog;
+		stog = stog->nextStog;
 	}
-	
 	return 0;
 }
 
 int resettingValue(sPosition stog) {
 	while (stog != NULL) {
-		tilePosition tiles = stog->firstMGT;
+		mgtPosition tiles = stog->firstMGT;
 		while (tiles != NULL) {
-			tiles->test = 0;
+			tiles->symbol = 0;
 			tiles->mask = 0;
-			tiles = tiles->nextTile;
+			tiles = tiles->brother;
 		}
 		stog = stog->nextStog;
 	}

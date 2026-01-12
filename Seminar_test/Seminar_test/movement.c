@@ -1,12 +1,29 @@
 #include "header.h"
 int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
+	makingPath(maze);
 	tilePosition currentTile = maze->firstTile;
 	tilePosition nextTile = currentTile;
 	int choice = 1;
 	while (choice) {
-		currentTile->test = 5;
-		printingMAzeUsingMask(maze);
-		currentTile->test = 4;
+		//check if player blocked path
+		if (currentTile == NULL) {
+			printingMazeUsingMask(maze);
+			printf("Important tile blocked, you lost\n");
+			break;
+		}
+		//checking if end is reached
+		if (currentTile->end) {
+			printf("You won!\n");
+			currentTile->path = 2;
+			printingMazeUsingMask(maze);
+			break;
+		}
+		//making it so that current position is better visible
+		currentTile->path = 2;
+		printingMazeUsingMask(maze);
+		currentTile->path = 1;
+
+		//player choice for movement
 		printf("Choose direction\n");
 		printf("1 - moving up\n");
 		printf("2 - moving down\n");
@@ -22,6 +39,7 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 			printf("Invalid choice\n");
 			continue;
 		}
+		printf("\n");
 		switch (choice) {
 		case 1:
 			nextTile = up(maze, currentTile);
@@ -44,6 +62,39 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 			break;
 		}
 		
+	}
+	return 0;
+}
+
+int makingPath(Position maze) {
+	Position first = maze;
+	int isPath[54] = { 0, 5, 10, 11, 12, 13,
+					14, 15, 19, 20, 23, 25,
+					26, 27, 28, 29, 30, 31,
+					34, 35, 36, 39, 40, 43,
+					45, 47, 48, 49, 53, 54,
+					55, 59, 63, 65, 67, 68,
+					70, 71, 72, 73, 74, 75,
+					77, 80, 85, 86, 87, 88,
+					89, 90, 91, 92, 96, 99 };
+	int crucialPath[18] = { 10, 11, 12, 13,	14, 15,	
+							25, 35, 45, 55, 65, 75,
+							85, 86, 87, 88, 89, 99 };
+	int i = 0, j = 0;
+	while (maze != NULL) {
+		tilePosition tiles = maze->firstTile;
+		while (tiles != NULL) {
+			if (tiles->placement == isPath[i]) {
+				tiles->path = 1;
+				if (isPath[i] == crucialPath[j]) {
+					tiles->isImportant = 1;
+					j++;
+				}
+				i++;
+			}
+			tiles = tiles->nextTile;
+		}
+		maze = maze->next;
 	}
 	return 0;
 }
@@ -132,21 +183,36 @@ tilePosition tileMover(tilePosition nextTile, tilePosition currentTile, sPositio
 	else {
 		int result;
 		if (nextTile->mask == 0) {
+			printf("First unlock that tile\n");
 			result = callingGame(ticTacToeStog, sudokuStog);
 			if (result == 1 || result == -1) {
 				printf("Tile unlocked\n");
 				nextTile->mask = 1;
-				return nextTile;
+				return currentTile;
 			}
 			else {
 				printf("Mini game not solved: cant unlock this tile anymore\n");
 				nextTile->mask = 2;
-				return currentTile;
+				if (nextTile->isImportant) {
+					return NULL;
+				}
+				else {
+					return currentTile;
+				}
 			}
 		}
 		else if (nextTile->mask == 2) {
 			printf("Cant unlock this tile\n");
 			return currentTile;
+		}
+		else {
+			if (nextTile->path == 1) {
+				return nextTile;
+			}
+			else {
+				printf("That is a wall\n");
+				return currentTile;
+			}
 		}
 	}
 }

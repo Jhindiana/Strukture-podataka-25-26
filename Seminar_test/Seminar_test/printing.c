@@ -5,7 +5,7 @@ int printing(Position test, sPosition ticTacToe_stogTest, sPosition sudoku_stogT
 	
 	//printing depending on mask
 	printf("\n");
-	printingMAzeUsingMask(test);
+	printingMazeUsingMask(test);
 
 	//printing maze rows and columns
 	printf("\n");
@@ -35,11 +35,16 @@ int printing(Position test, sPosition ticTacToe_stogTest, sPosition sudoku_stogT
 }
 
 int printingMaze(Position firstTest) {
+	printf("X \t");
+	for (int i = 0; i < TILE; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstTest != NULL) {
 		printf("%d\t", firstTest->depth);
 		tilePosition help = firstTest->firstTile;
 		while (help != NULL) {
-			printf("%d ", help->test);
+			printf("%d ", help->path);
 			help = help->nextTile;
 		}
 		printf("\n");
@@ -48,13 +53,21 @@ int printingMaze(Position firstTest) {
 	return 0;
 }
 
-int printingMAzeUsingMask(Position firstTest) {
+int printingMazeUsingMask(Position firstTest) {
+	printf("X \t");
+	for (int i = 0; i < TILE; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstTest != NULL) {
 		printf("%d\t", firstTest->depth);
 		tilePosition help = firstTest->firstTile;
 		while (help != NULL) {
 			if (help->mask == 1) {
-				printf("%d ", help->test);
+				printf("%d ", help->path);
+			}
+			else if (help->mask == 2) {
+				printf("? ");
 			}
 			else {
 				printf("  ");
@@ -68,6 +81,11 @@ int printingMAzeUsingMask(Position firstTest) {
 }
 
 int printingMazeRowsAndColumns(Position firstTest) {
+	printf("X \t");
+	for (int i = 0; i < TILE; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstTest != NULL) {
 		printf("%d\t", firstTest->depth);
 		tilePosition help = firstTest->firstTile;
@@ -82,6 +100,11 @@ int printingMazeRowsAndColumns(Position firstTest) {
 }
 
 int printingTicTacToe(sPosition firstTicTacToeTest) {
+	printf("X \t");
+	for (int i = 0; i < 3; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstTicTacToeTest != NULL) {
 		printf("%d\t", firstTicTacToeTest->depth_mgs);
 		mgtPosition mgthelp = firstTicTacToeTest->firstMGT;
@@ -105,7 +128,6 @@ int printingTicTacToe(sPosition firstTicTacToeTest) {
 
 int printingTicTacToeRowsAndColumns(sPosition firstTicTacToeTest) {
 	while (firstTicTacToeTest != NULL) {
-		printf("%d\t", firstTicTacToeTest->depth_mgs);
 		mgtPosition mgthelp = firstTicTacToeTest->firstMGT;
 		while (mgthelp != NULL) {
 			if (!mgthelp->symbol) {
@@ -123,6 +145,11 @@ int printingTicTacToeRowsAndColumns(sPosition firstTicTacToeTest) {
 }
 
 int printingSudoku(sPosition firstSudokuTest) {
+	printf("X \t");
+	for (int i = 0; i < SUDOKU_SIZE; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstSudokuTest != NULL) {
 		printf("%d\t", firstSudokuTest->depth_mgs);
 		mgtPosition mgthelp = firstSudokuTest->firstMGT;
@@ -137,6 +164,11 @@ int printingSudoku(sPosition firstSudokuTest) {
 }
 
 int printingSudokuUsingMask(sPosition firstSudokuTest) {
+	printf("X \t");
+	for (int i = 0; i < SUDOKU_SIZE; i++) {
+		printf("%d ", i);
+	}
+	printf("\n\n\n");
 	while (firstSudokuTest != NULL) {
 		printf("%d\t", firstSudokuTest->depth_mgs);
 		mgtPosition mgthelp = firstSudokuTest->firstMGT;

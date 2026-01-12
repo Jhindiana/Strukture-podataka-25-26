@@ -1,3 +1,2 @@
-﻿  Seminar_test.c
-C:\Users\Luka Radman-Livaja\OneDrive\Radna površina\SP25\Seminar_test\Seminar_test\Seminar_test.c(4,8): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Seminar_test.vcxproj -> C:\Users\Luka Radman-Livaja\OneDrive\Radna površina\SP25\Seminar_test\x64\Debug\Seminar_test.exe
+﻿  TicTacToe.c
+C:\Users\Luka Radman-Livaja\OneDrive\Radna površina\SP25\Seminar_test\Seminar_test\TicTacToe.c(44,1): warning C4715: 'ticTacToe': not all control paths return a value

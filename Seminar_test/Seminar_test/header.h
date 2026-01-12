@@ -15,13 +15,14 @@ mgtPosition newMGT();
 int makingMiniGameTiles(sPosition, int);
 
 int settingValue(Position, sPosition, sPosition);
+int settingMGTValue(sPosition);
 int resettingValue(sPosition);
 int randomNumberGenerator(int);
 
 int printing(Position, sPosition, sPosition);
 
 int printingMaze(Position);
-int printingMAzeUsingMask(Position);
+int printingMazeUsingMask(Position);
 int printingMazeRowsAndColumns(Position);
 
 int printingTicTacToe(sPosition);
@@ -50,6 +51,7 @@ int sudokuSeven(sPosition);
 int sudokuEight(sPosition);
 
 int movement(Position, sPosition, sPosition);
+int makingPath(Position);
 tilePosition up(Position, tilePosition);
 tilePosition down(Position, tilePosition);
 tilePosition left(Position, tilePosition);

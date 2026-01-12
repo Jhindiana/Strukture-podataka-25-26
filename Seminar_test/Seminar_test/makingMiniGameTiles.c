@@ -1,4 +1,5 @@
 #include "header.h"
+
 int makingMiniGameTiles(sPosition s, int x) {
 	for (int i = 0; i < x; i++) {
 		s->nextStog = newStog(i);

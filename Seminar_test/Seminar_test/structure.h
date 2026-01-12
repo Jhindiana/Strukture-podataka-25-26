@@ -6,7 +6,10 @@ typedef struct tile {
 	int row;
 	int column;
 	int mask;
-	int test;
+	int path;
+	int placement;
+	int isImportant;
+	int end;
 	tilePosition nextTile;
 }tile;
 

@@ -28,8 +28,8 @@ int main() {
 	test = headMaze.next;
 	ticTacToe_stogTest = head_ticTacToeStog.nextStog;
 	sudoku_stogTest = head_sudokuStog.nextStog;
-	settingValue(test, ticTacToe_stogTest, sudoku_stogTest);
 
+	settingValue(test, ticTacToe_stogTest, sudoku_stogTest);
 	movement(test, ticTacToe_stogTest, sudoku_stogTest);
 
 	return 0;
