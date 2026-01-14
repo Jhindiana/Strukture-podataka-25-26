@@ -58,3 +58,8 @@ tilePosition left(Position, tilePosition);
 tilePosition right(Position, tilePosition);
 tilePosition tileMover(tilePosition, tilePosition, sPosition, sPosition);
 int callingGame(sPosition, sPosition);
+
+int freeingPositionMemory(Position);
+int freeingTilePositionMemory(tilePosition);
+int freeingSPositionMemory(sPosition);
+int freeingMGTPositionMemory(mgtPosition);

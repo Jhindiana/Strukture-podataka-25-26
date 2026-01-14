@@ -47,3 +47,47 @@ mgtPosition newMGT() {
 	nMGT->symbol = 0;
 	return nMGT;
 }
+
+//freeing maze memory
+int freeingPositionMemory(Position maze) {
+	while (maze->next != NULL) {
+		Position del = maze->next;
+		freeingTilePositionMemory(del->firstTile);
+		maze->next = del->next;
+		del->next = NULL;
+		free(del);
+	}
+	return 0;
+}
+
+//freeing maze tile memory
+int freeingTilePositionMemory(tilePosition mazeTile) {
+	while (mazeTile != NULL) {
+		tilePosition del = mazeTile;
+		mazeTile = del->nextTile;
+		free(del);
+	}
+	return 0;
+}
+
+//freeing tic tac toe and sudoku memory
+int freeingSPositionMemory(sPosition miniGameStog) {
+	while (miniGameStog->nextStog != NULL) {
+		sPosition del = miniGameStog->nextStog;
+		freeingMGTPositionMemory(del->firstMGT);
+		miniGameStog->nextStog = del->nextStog;
+		del->nextStog = NULL;
+		free(del);
+	}
+	return 0;
+}
+
+//freeing tic tac toe and sudoku tiles memory
+int freeingMGTPositionMemory(mgtPosition mgtTile) {
+	while (mgtTile != NULL) {
+		mgtPosition del = mgtTile;
+		mgtTile = del->brother;
+		free(del);
+	}
+	return 0;
+}

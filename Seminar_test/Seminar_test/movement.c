@@ -58,7 +58,7 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		default:
-			printf("Pozvan default u movement\n");
+			printf("Forced stop\n");
 			break;
 		}
 		
