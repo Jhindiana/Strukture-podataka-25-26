@@ -1,7 +1,8 @@
 #include "header.h"
 int ticTacToe(sPosition ttt) {
 	int availableSpots = 9;
-	int playerChoice, playerRow, playerColumn;
+	char playerChoiceRow, playerChoiceColumn;
+	int playerRow, playerColumn;
 	int haveAWinner = 0;
 	while (availableSpots > 0) {
 		//players plays
@@ -9,19 +10,19 @@ int ticTacToe(sPosition ttt) {
 		printf("\n");
 		printingTicTacToeRowsAndColumns(ttt);
 		printf("Choose row: ");
-		scanf("%d", &playerChoice);
-		playerRow = playerChoice;
-		if (playerRow < 0 || playerRow > 2) {
-			printf("Wrong choice\n");
+		scanf(" %c", &playerChoiceRow);
+		if (playerChoiceRow < '0' || playerChoiceRow > '2') {
+			printf("Invalid choice\n");
 			continue;
 		}
+		playerRow = switchFunction(playerChoiceRow);
 		printf("Choose column: ");
-		scanf("%d", &playerChoice);
-		playerColumn = playerChoice;
-		if (playerColumn < 0 || playerColumn > 2) {
-			printf("Wrong choice\n");
+		scanf(" %c", &playerChoiceColumn);
+		if (playerChoiceColumn < '0' || playerChoiceColumn > '2') {
+			printf("Invalid choice\n");
 			continue;
 		}
+		playerColumn = switchFunction(playerChoiceColumn);
 		if (applyingChoice(ttt, playerRow, playerColumn) == 0) {
 			printf("Spot already taken\n");
 			continue;

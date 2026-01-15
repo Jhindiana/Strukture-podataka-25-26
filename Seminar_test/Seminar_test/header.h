@@ -18,6 +18,7 @@ int settingValue(Position, sPosition, sPosition);
 int settingMGTValue(sPosition);
 int resettingValue(sPosition);
 int randomNumberGenerator(int);
+int switchFunction(char);
 
 int printing(Position, sPosition, sPosition);
 

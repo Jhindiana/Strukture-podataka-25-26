@@ -70,7 +70,7 @@ int printingMazeUsingMask(Position firstTest) {
 				printf("X ");
 			}
 			else {
-				printf("? ");
+				printf("_ ");
 			}
 			help = help->nextTile;
 		}
@@ -177,7 +177,7 @@ int printingSudokuUsingMask(sPosition firstSudokuTest) {
 				printf("%d ", mgthelp->symbol);
 			}
 			else {
-				printf("? ");
+				printf("_ ");
 			}
 			mgthelp = mgthelp->brother;
 		}

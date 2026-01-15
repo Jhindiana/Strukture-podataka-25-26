@@ -33,16 +33,7 @@ int main() {
 	movement(test, ticTacToe_stogTest, sudoku_stogTest);
 
 	freeingPositionMemory(&headMaze);
-	if (headMaze.next == NULL) {
-		printf("Maze je free\n");
-	}
 	freeingSPositionMemory(&head_ticTacToeStog);
-	if (head_ticTacToeStog.nextStog == NULL) {
-		printf("Tic tac toe je free\n");
-	}
 	freeingSPositionMemory(&head_sudokuStog);
-	if (head_sudokuStog.nextStog == NULL) {
-		printf("Sudoku je free\n");
-	}
 	return 0;
 }

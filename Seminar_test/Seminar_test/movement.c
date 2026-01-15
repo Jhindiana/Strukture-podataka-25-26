@@ -3,8 +3,9 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 	makingPath(maze);
 	tilePosition currentTile = maze->firstTile;
 	tilePosition nextTile = currentTile;
-	int choice = 1;
-	while (choice) {
+	char choice = '1';
+	int flag = 1;
+	while ( flag ) {
 		//check if player blocked path
 		if (currentTile == NULL) {
 			printingMazeUsingMask(maze);
@@ -13,7 +14,7 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 		}
 		//checking if end is reached
 		if (currentTile->end) {
-			printf("You won!\n");
+			printf("You won!GG Lets fucking goooooooo\n");
 			currentTile->path = 2;
 			printingMazeUsingMask(maze);
 			break;
@@ -31,34 +32,35 @@ int movement(Position maze, sPosition ticTacToeStog, sPosition sudokuStog) {
 		printf("4 - moving right\n");
 		printf("0 - stop\n");
 		printf("Your choice: ");
-		if (!scanf("%d", &choice)) {
+		if (!scanf(" %c", &choice)) {
 			printf("Choice not registered\n");
 			continue;
 		}
-		if (choice > 4 || 0 > choice) {
+		if (choice < '0' ||choice > '4') {
 			printf("Invalid choice\n");
 			continue;
 		}
 		printf("\n");
 		switch (choice) {
-		case 1:
+		case '1':
 			nextTile = up(maze, currentTile);
 			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
-		case 2:
+		case '2':
 			nextTile = down(maze, currentTile);
 			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
-		case 3:
+		case '3':
 			nextTile = left(maze, currentTile);
 			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
-		case 4:
+		case '4':
 			nextTile = right(maze, currentTile);
 			currentTile = tileMover(nextTile, currentTile, ticTacToeStog, sudokuStog);
 			break;
 		default:
 			printf("Forced stop\n");
+			flag = 0;
 			break;
 		}
 		

@@ -1,5 +1,6 @@
 #include "header.h"
 int sudoku(sPosition sudokuStog) {
+	char playerChoiceRow, playerChoiceColumn;
 	int playerChoice, playerRow, playerColumn, flag = 1, n = SUDOKU_SIZE * SUDOKU_SIZE - revealedNumbers(sudokuStog), m;
 	while (flag) {
 		if (!n) {
@@ -12,19 +13,19 @@ int sudoku(sPosition sudokuStog) {
 		printf("\n");
 		printingSudokuRowsAndColumns(sudokuStog);
 		printf("Choose row: ");
-		scanf("%d", &playerChoice);
-		playerRow = playerChoice;
-		if (playerRow < 0 || playerRow > 3) {
-			printf("Wrong choice\n");
+		scanf(" %c", &playerChoiceRow);
+		if (playerChoiceRow < '0' || playerChoiceRow > '3') {
+			printf("Invalid choice\n");
 			continue;
 		}
+		playerRow = switchFunction(playerChoiceRow);
 		printf("Choose column: ");
-		scanf("%d", &playerChoice);
-		playerColumn = playerChoice;
-		if (playerColumn < 0 || playerColumn > 3) {
-			printf("Wrong choice\n");
+		scanf(" %c", &playerChoiceColumn);
+		if (playerChoiceColumn < '0' || playerChoiceColumn > '3') {
+			printf("Invalid choice\n");
 			continue;
 		}
+		playerColumn = switchFunction(playerChoiceColumn);
 		m = applyingSudokuChoice(sudokuStog, playerRow, playerColumn);
 		if (m == 1) {
 			printf("Wrong number placed\n");
