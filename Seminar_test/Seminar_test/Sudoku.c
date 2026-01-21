@@ -1,7 +1,7 @@
 #include "header.h"
 int sudoku(sPosition sudokuStog) {
 	char playerChoiceRow, playerChoiceColumn;
-	int playerChoice, playerRow, playerColumn, flag = 1, n = SUDOKU_SIZE * SUDOKU_SIZE - revealedNumbers(sudokuStog), m;
+	int playerRow, playerColumn, flag = 1, n = SUDOKU_SIZE * SUDOKU_SIZE - revealedNumbers(sudokuStog), m;
 	while (flag) {
 		if (!n) {
 			printf("Sudoku cleared\n");
@@ -37,6 +37,7 @@ int sudoku(sPosition sudokuStog) {
 		}
 		n--;
 	}
+	return 0;
 }
 
 int revealedNumbers(sPosition sudokuStog) {
@@ -56,6 +57,7 @@ int revealedNumbers(sPosition sudokuStog) {
 
 int applyingSudokuChoice(sPosition sudokuStog, int pR, int pC) {
 	int number;
+	sPosition tempPrint = sudokuStog;
 	while (sudokuStog->depth_mgs != pR) {
 		sudokuStog = sudokuStog->nextStog;
 	}
@@ -67,6 +69,9 @@ int applyingSudokuChoice(sPosition sudokuStog, int pR, int pC) {
 		printf("Position already solved\n");
 		return 0;
 	}
+	selectedTile->mask = 2;
+	printingSudokuUsingMask(tempPrint);
+	selectedTile->mask = 0;
 	printf("Number: ");
 	scanf("%d", &number);
 	if (number < 1 || number>4) {

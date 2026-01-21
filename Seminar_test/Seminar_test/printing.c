@@ -77,6 +77,7 @@ int printingMazeUsingMask(Position firstTest) {
 		printf("\n");
 		firstTest = firstTest->next;
 	}
+	printf("0 = wall\n1 = path\n2 = current position\n_ = unopened tiles\nX = tiles that cannot be unlocked anymore\n");
 	return 0;
 }
 
@@ -116,7 +117,7 @@ int printingTicTacToe(sPosition firstTicTacToeTest) {
 				printf("O ");
 			}
 			else {
-				printf("? ");
+				printf("_ ");
 			}
 			mgthelp = mgthelp->brother;
 		}
@@ -129,6 +130,7 @@ int printingTicTacToe(sPosition firstTicTacToeTest) {
 int printingTicTacToeRowsAndColumns(sPosition firstTicTacToeTest) {
 	while (firstTicTacToeTest != NULL) {
 		mgtPosition mgthelp = firstTicTacToeTest->firstMGT;
+		printf("%d\t", firstTicTacToeTest->depth_mgs);
 		while (mgthelp != NULL) {
 			if (!mgthelp->symbol) {
 				printf("%d, %d\t", mgthelp->row, mgthelp->column);
@@ -173,8 +175,11 @@ int printingSudokuUsingMask(sPosition firstSudokuTest) {
 		printf("%d\t", firstSudokuTest->depth_mgs);
 		mgtPosition mgthelp = firstSudokuTest->firstMGT;
 		while (mgthelp != NULL) {
-			if (mgthelp->mask) {
+			if (mgthelp->mask == 1) {
 				printf("%d ", mgthelp->symbol);
+			}
+			else if (mgthelp->mask == 2) {
+				printf("? ");
 			}
 			else {
 				printf("_ ");
